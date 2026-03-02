@@ -119,7 +119,7 @@
 
         <a href="http://gkmotion.infinityfreeapp.com/" target="_blank" rel="noopener noreferrer" class="project-card reveal">
           <div class="project-img">
-            <img src="assets/projet-myphone.png"
+            <img src="assets/projet-gkmotion.png"
                  alt="Création d'un site de réservation sur-mesure pour une agence de location de voitures"
                  loading="lazy">
           </div>
@@ -134,7 +134,7 @@
 
         <a href="https://myphone39.fr/" target="_blank" rel="noopener noreferrer" class="project-card reveal" style="transition-delay: 150ms;">
           <div class="project-img">
-            <img src="assets/projet-gkmotion.png"
+            <img src="assets/projet-myphone.png"
                  alt="Site internet vitrine et prise de rendez-vous pour un centre de réparation de smartphones"
                  loading="lazy">
           </div>
@@ -153,39 +153,116 @@
 
   <section id="offres" class="pricing-premium">
     <div class="container">
-      <header class="section-header reveal sr-only">
-        <h2>Nos offres de création de site web</h2>
+      <header class="section-header reveal" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <h2>Investissez dans votre <span>croissance</span></h2>
+        <p class="text-secondary" style="max-width: 600px; margin-top: 1rem; font-size: 1.1rem;">
+          Des solutions digitales conçues pour générer du chiffre d'affaires. Choisissez le modèle qui correspond à votre ambition.
+        </p>
+
+        <div class="pricing-toggle-wrapper">
+          <span class="toggle-label active" id="label-unique">Paiement Unique</span>
+          <label class="switch" aria-label="Changer le type de facturation">
+            <input type="checkbox" id="pricing-switch">
+            <span class="slider round"></span>
+          </label>
+          <span class="toggle-label" id="label-abo">Abonnement Mensuel</span>
+        </div>
       </header>
-      <div class="pricing-grid">
+
+      <div class="pricing-grid active-grid" id="grid-unique">
+
         <article class="price-item reveal">
           <h3>Pack Vitrine</h3>
-          <div class="price-value">1 500€</div>
-          <p class="text-secondary">Fondations solides pour une présence numérique impactante.</p>
+          <div class="price-value">650€</div>
+          <p class="text-secondary">Transformez vos visiteurs en prospects grâce à une vitrine haut de gamme.</p>
           <ul class="features-list">
-            <li>Design UI/UX personnalisé</li>
-            <li>Optimisation Mobile & Tablette</li>
+            <li>Design sur-mesure</li>
+            <li>Vitesse d'affichage ultra-rapide</li>
+            <li>Formulaire de contact intelligent</li>
+            <li>Version mobile (smartphone, tablette)</li>
+            <li>Conformité RGPD avec des pages légales</li>
           </ul>
         </article>
+
         <article class="price-item featured reveal" style="transition-delay: 150ms;">
-          <div class="popular">Le plus demandé</div>
+          <div class="popular">Machine à Leads</div>
           <h3>Pack Croissance</h3>
-          <div class="price-value">2 900€</div>
-          <p class="text-secondary">Stratégie complète, SEO intégré et performances optimales.</p>
+          <div class="price-value">1 850€</div>
+          <p class="text-secondary">Dominez votre marché local sur Google et automatisez votre acquisition client.</p>
           <ul class="features-list">
-            <li>Architecture SEO Avancée</li>
-            <li>Stratégie de référencement local</li>
+            <li><strong>Tout le Pack Vitrine inclus</strong></li>
+            <li>Optimisation SEO avancée & Mots-clés</li>
+            <li>Fiche Google My Business optimisée</li>
+            <li>Rédaction orientée vente (Copywriting)</li>
+            <li>Outils d'analyse de trafic intégrés</li>
           </ul>
         </article>
+
         <article class="price-item reveal" style="transition-delay: 300ms;">
-          <h3>Pack Sur-Mesure</h3>
+          <h3>Outils Métiers</h3>
           <div class="price-value">Sur Devis</div>
-          <p class="text-secondary">Applications complexes et écosystèmes digitaux uniques.</p>
+          <p class="text-secondary">Automatisez vos tâches complexes avec un logiciel sur-mesure ou e-commerce.</p>
           <ul class="features-list">
-            <li>Outils métiers dédiés</li>
-            <li>Bases de données & API</li>
+            <li>Boutique E-commerce ou App Web</li>
+            <li>Espaces clients & Tableaux de bord</li>
+            <li>Paiement & Facturation automatisés</li>
+            <li>Connexion à vos outils (API/ERP)</li>
+            <li>Architecture de données sécurisée</li>
           </ul>
         </article>
+
       </div>
+
+      <div class="pricing-grid hidden-grid" id="grid-abo">
+
+        <article class="price-item">
+          <h3>Pack Vitrine</h3>
+          <div class="price-value">49€<span>/mois</span></div>
+          <p class="text-secondary" style="font-size: 0.95rem; margin-top: -10px; margin-bottom: 1.5rem; font-weight: 500;">+ 200€ de frais de création</p>
+
+          <p class="text-secondary">Transformez vos visiteurs en prospects grâce à une vitrine haut de gamme.</p>
+          <ul class="features-list">
+            <li>Design sur-mesure</li>
+            <li>Vitesse d'affichage ultra-rapide</li>
+            <li>Formulaire de contact intelligent</li>
+            <li>Version mobile (smartphone, tablette)</li>
+            <li>Conformité RGPD avec des pages légales</li>
+          </ul>
+        </article>
+
+        <article class="price-item featured">
+          <div class="popular">Machine à Leads</div>
+          <h3>Pack Croissance</h3>
+          <div class="price-value">149€<span>/mois</span></div>
+          <p style="font-size: 0.95rem; margin-top: -10px; margin-bottom: 1.5rem; font-weight: 500; color: var(--accent);">+ 490€ de frais de création</p>
+
+          <p class="text-secondary">Dominez votre marché local sur Google et automatisez votre acquisition client.</p>
+          <ul class="features-list">
+            <li><strong>Tout le Pack Vitrine inclus</strong></li>
+            <li>Optimisation SEO avancée & Mots-clés</li>
+            <li>Fiche Google My Business optimisée</li>
+            <li>Rédaction orientée vente (Copywriting)</li>
+            <li>Outils d'analyse de trafic intégrés</li>
+          </ul>
+        </article>
+
+        <article class="price-item">
+          <h3>Outils Métiers</h3>
+          <div class="price-value">Sur Devis</div>
+          <p class="text-secondary" style="font-size: 0.95rem; margin-top: -10px; margin-bottom: 1.5rem; font-weight: 500;">+ Frais d'initialisation sur devis</p>
+
+          <p class="text-secondary">Automatisez vos tâches complexes avec un logiciel sur-mesure ou e-commerce.</p>
+          <ul class="features-list">
+            <li>Boutique E-commerce ou App Web</li>
+            <li>Espaces clients & Tableaux de bord</li>
+            <li>Paiement & Facturation automatisés</li>
+            <li>Connexion à vos outils (API/ERP)</li>
+            <li>Architecture de données sécurisée</li>
+          </ul>
+        </article>
+
+      </div>
+
     </div>
   </section>
 
@@ -226,7 +303,11 @@
     <p>&copy; 2026 K-VIZION — L'excellence du développement web sur-mesure en Bourgogne-Franche-Comté et dans toute la France.</p>
   </div>
 </footer>
-
+<button id="back-to-top" class="back-to-top" aria-label="Remonter en haut de la page">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
 <script>
   const menuBtn = document.querySelector('#mobile-menu');
   const navLinks = document.querySelector('#nav-list');
@@ -259,6 +340,59 @@
   }, observerOptions);
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // --- BOUTON RETOUR EN HAUT ---
+  const backToTopBtn = document.getElementById('back-to-top');
+
+  // Afficher le bouton après 300px de scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+
+  // Remonter en haut au clic
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // --- SWITCH DES OFFRES (Unique / Abonnement) ---
+  const pricingSwitch = document.getElementById('pricing-switch');
+  const gridUnique = document.getElementById('grid-unique');
+  const gridAbo = document.getElementById('grid-abo');
+  const labelUnique = document.getElementById('label-unique');
+  const labelAbo = document.getElementById('label-abo');
+
+  if (pricingSwitch) {
+    pricingSwitch.addEventListener('change', () => {
+      if (pricingSwitch.checked) {
+        // Passer en mode Abonnement
+        gridUnique.classList.add('hidden-grid');
+        gridUnique.classList.remove('active-grid');
+
+        gridAbo.classList.remove('hidden-grid');
+        gridAbo.classList.add('active-grid');
+
+        labelUnique.classList.remove('active');
+        labelAbo.classList.add('active');
+      } else {
+        // Passer en mode Paiement Unique
+        gridAbo.classList.add('hidden-grid');
+        gridAbo.classList.remove('active-grid');
+
+        gridUnique.classList.remove('hidden-grid');
+        gridUnique.classList.add('active-grid');
+
+        labelAbo.classList.remove('active');
+        labelUnique.classList.add('active');
+      }
+    });
+  }
 </script>
 </body>
 </html>
