@@ -39,6 +39,8 @@
       "areaServed": [
         "Hauts-de-Bienne",
         "Bourgogne-Franche-Comté",
+        "Lyon",
+        "Auvergne-Rhône-Alpes",
         "France entière"
       ],
       "knowsAbout": [
@@ -113,7 +115,7 @@
   <section id="realisations" class="portfolio-premium">
     <div class="container">
       <header class="section-header reveal">
-        <h2>Projets web <span>sélectionnés</span></h2>
+        <h2>Nos dernières <span>réalisations</span></h2>
       </header>
       <div class="portfolio-grid">
 
@@ -174,7 +176,7 @@
         <article class="price-item reveal">
           <h3>Pack Vitrine</h3>
           <div class="price-value">650€</div>
-          <p class="text-secondary">Transformez vos visiteurs en prospects grâce à une vitrine haut de gamme.</p>
+          <p class="text-secondary">Développez votre présence en ligne et transformez vos visiteurs en prospects grâce à une vitrine haut de gamme.</p>
           <ul class="features-list">
             <li>Design sur-mesure</li>
             <li>Vitesse d'affichage ultra-rapide</li>
@@ -187,7 +189,7 @@
         <article class="price-item featured reveal" style="transition-delay: 150ms;">
           <div class="popular">Machine à Leads</div>
           <h3>Pack Croissance</h3>
-          <div class="price-value">1 850€</div>
+          <div class="price-value">1 750€</div>
           <p class="text-secondary">Dominez votre marché local sur Google et automatisez votre acquisition client.</p>
           <ul class="features-list">
             <li><strong>Tout le Pack Vitrine inclus</strong></li>
@@ -233,7 +235,7 @@
         <article class="price-item featured">
           <div class="popular">Machine à Leads</div>
           <h3>Pack Croissance</h3>
-          <div class="price-value">149€<span>/mois</span></div>
+          <div class="price-value">119€<span>/mois</span></div>
           <p style="font-size: 0.95rem; margin-top: -10px; margin-bottom: 1.5rem; font-weight: 500; color: var(--accent);">+ 490€ de frais de création</p>
 
           <p class="text-secondary">Dominez votre marché local sur Google et automatisez votre acquisition client.</p>
@@ -276,11 +278,15 @@
         <form id="contact-form" class="form-grid" action="https://api.web3forms.com/submit" method="POST">
 
           <input type="hidden" name="access_key" value="0273a1c0-96da-42b5-b082-533c7e69e608">
-
-          <input type="hidden" name="subject" value="🔥 Nouveau Lead Sur-Mesure depuis K-VIZION !">
+          <input type="hidden" name="subject" value="Nouveau Lead Sur-Mesure depuis K-VIZION !">
           <input type="hidden" name="from_name" value="K-VIZION Site Web">
-
           <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+          <label for="nom" class="sr-only">Votre nom et prénom</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom et prénom" required>
+
+          <label for="telephone" class="sr-only">Numéro de téléphone</label>
+          <input type="tel" id="telephone" name="telephone" placeholder="Numéro de téléphone" required>
 
           <label for="societe" class="sr-only">Nom de votre entreprise</label>
           <input type="text" id="societe" name="societe" placeholder="Nom de votre entreprise" required>
@@ -289,18 +295,42 @@
           <input type="email" id="email" name="email" placeholder="Email professionnel" required>
 
           <label for="message" class="sr-only">Votre vision</label>
-          <textarea id="message" name="message" class="full-width" placeholder="Parlez-nous de votre vision et de vos besoins techniques..." required></textarea>
+          <textarea id="message" name="message" class="full-width" placeholder="Parlez-nous de votre vision et de vos besoins..." required></textarea>
 
-          <button type="submit" class="btn-main full-width">Envoyer le brief au studio</button>
+          <button type="submit" class="btn-main full-width">Discuter de mon projet</button>
+
         </form>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer-premium">
+<footer class="footer-premium" style="padding: 3rem 0 2rem 0;">
   <div class="container">
-    <p>&copy; 2026 K-VIZION — L'excellence du développement web sur-mesure en Bourgogne-Franche-Comté et dans toute la France.</p>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
+
+      <div class="footer-brand">
+        <h3 style="margin-bottom: 0.5rem;">K-VIZION</h3>
+        <p class="text-secondary" style="font-size: 0.95rem; max-width: 350px;">
+          L'excellence du développement web sur-mesure pour propulser la croissance de votre entreprise.
+        </p>
+      </div>
+
+      <div class="footer-links" style="display: flex; gap: 1.5rem; font-size: 0.9rem;">
+        <a href="#contact" class="text-secondary" style="text-decoration: none;">Nous contacter</a>
+        <a href="mentions-legales.html" class="text-secondary" style="text-decoration: none;">Mentions légales</a>
+        <a href="politique-confidentialite.html" class="text-secondary" style="text-decoration: none;">Politique de confidentialité</a>
+      </div>
+
+    </div>
+
+    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; text-align: center;">
+      <p class="text-secondary" style="font-size: 0.85rem; margin: 0;">
+        &copy; 2026 K-VIZION. Tous droits réservés. Basé en Bourgogne-Franche-Comté, intervention à Lyon et dans toute la France.
+      </p>
+    </div>
+
   </div>
 </footer>
 <button id="back-to-top" class="back-to-top" aria-label="Remonter en haut de la page">
@@ -393,6 +423,12 @@
       }
     });
   }
+</script>
+<script>
+  window.onpageshow = function() {
+    const form = document.getElementById("contact-form");
+    if(form) form.reset();
+  };
 </script>
 </body>
 </html>
