@@ -20,6 +20,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+
+  <link rel="apple-touch-icon" sizes="512x512" href="assets/favicon-512x512.png">
 
   <script type="application/ld+json">
     {
@@ -73,6 +79,11 @@
     </ul>
   </div>
 </nav>
+
+<div class="promo-banner">
+  <span>🚀 Offre de lancement exclusive : -50% sur les frais de création pour nos 3 premiers clients !</span>
+  <a href="#contact">Réserver ma place →</a>
+</div>
 
 <main>
   <section id="accueil" class="hero-premium">
@@ -163,18 +174,18 @@
         </p>
 
         <div class="pricing-toggle-wrapper">
-          <span class="toggle-label active" id="label-unique">Paiement Unique</span>
+          <span class="toggle-label" id="label-unique">Paiement Unique</span>
           <label class="switch" aria-label="Changer le type de facturation">
-            <input type="checkbox" id="pricing-switch">
+            <input type="checkbox" id="pricing-switch" checked>
             <span class="slider round"></span>
           </label>
-          <span class="toggle-label" id="label-abo">Abonnement Mensuel</span>
+          <span class="toggle-label active" id="label-abo">Abonnement Mensuel</span>
         </div>
       </header>
 
-      <div class="pricing-grid active-grid" id="grid-unique">
+      <div class="pricing-grid hidden-grid" id="grid-unique">
 
-        <article class="price-item reveal">
+        <article class="price-item">
           <h3>Pack Vitrine</h3>
           <div class="price-value">650€</div>
           <p class="text-secondary">Développez votre présence en ligne et transformez vos visiteurs en prospects grâce à une vitrine haut de gamme.</p>
@@ -187,7 +198,7 @@
           </ul>
         </article>
 
-        <article class="price-item featured reveal" style="transition-delay: 150ms;">
+        <article class="price-item featured" style="transition-delay: 150ms;">
           <div class="popular">Machine à Leads</div>
           <h3>Pack Croissance</h3>
           <div class="price-value">1 750€</div>
@@ -201,7 +212,7 @@
           </ul>
         </article>
 
-        <article class="price-item reveal" style="transition-delay: 300ms;">
+        <article class="price-item" style="transition-delay: 300ms;">
           <h3>Outils Métiers</h3>
           <div class="price-value">Sur Devis</div>
           <p class="text-secondary">Automatisez vos tâches complexes avec un logiciel sur-mesure ou e-commerce.</p>
@@ -209,16 +220,16 @@
             <li>Boutique E-commerce ou App Web</li>
             <li>Espaces clients & Tableaux de bord</li>
             <li>Paiement & Facturation automatisés</li>
-            <li>Connexion à vos outils (API/ERP)</li>
+            <li>Connexion à vos outils</li>
             <li>Architecture de données sécurisée</li>
           </ul>
         </article>
 
       </div>
 
-      <div class="pricing-grid hidden-grid" id="grid-abo">
+      <div class="pricing-grid active-grid" id="grid-abo">
 
-        <article class="price-item">
+        <article class="price-item reveal">
           <h3>Pack Vitrine</h3>
           <div class="price-value">49€<span>/mois</span></div>
           <p class="text-secondary" style="font-size: 0.95rem; margin-top: -10px; margin-bottom: 1.5rem; font-weight: 500;">+ 200€ de frais de création</p>
@@ -233,7 +244,7 @@
           </ul>
         </article>
 
-        <article class="price-item featured">
+        <article class="price-item featured reveal" style="transition-delay: 150ms;">
           <div class="popular">Machine à Leads</div>
           <h3>Pack Croissance</h3>
           <div class="price-value">119€<span>/mois</span></div>
@@ -249,7 +260,7 @@
           </ul>
         </article>
 
-        <article class="price-item">
+        <article class="price-item reveal" style="transition-delay: 300ms;">
           <h3>Outils Métiers</h3>
           <div class="price-value">Sur Devis</div>
           <p class="text-secondary" style="font-size: 0.95rem; margin-top: -10px; margin-bottom: 1.5rem; font-weight: 500;">+ Frais d'initialisation sur devis</p>
@@ -259,11 +270,18 @@
             <li>Boutique E-commerce ou App Web</li>
             <li>Espaces clients & Tableaux de bord</li>
             <li>Paiement & Facturation automatisés</li>
-            <li>Connexion à vos outils (API/ERP)</li>
+            <li>Connexion à vos outils</li>
             <li>Architecture de données sécurisée</li>
           </ul>
         </article>
 
+      </div>
+
+      <div class="reveal" style="text-align: center; margin-top: 4rem;">
+        <a href="#contact" class="btn-main">Réserver un appel stratégique</a>
+        <p class="text-secondary" style="margin-top: 1rem; font-size: 0.95rem;">
+          30 minutes offertes pour définir l'architecture digitale dont votre PME a réellement besoin.
+        </p>
       </div>
 
     </div>
@@ -273,8 +291,8 @@
     <div class="container">
       <div class="contact-card reveal">
         <div class="contact-content">
-          <h2>Prêt à innover ?</h2>
-          <p class="text-secondary">Discutons de vos enjeux métiers et voyons comment nos lignes de code sur-mesure peuvent y répondre.</p>
+          <h2>Parlons de votre <strong>vision</strong></h2>
+          <p class="text-secondary">Chaque grand projet commence par un simple échange. Réservez vos 30 minutes de conseil stratégique, sans aucun engagement.</p>
         </div>
         <form id="contact-form" class="form-grid" action="https://api.web3forms.com/submit" method="POST">
 

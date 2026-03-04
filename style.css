@@ -53,16 +53,54 @@ body {
 .logo { font-size: 1.5rem; font-weight: 900; color: var(--text-main); text-decoration: none; letter-spacing: -0.5px; }
 .logo span { color: var(--accent); }
 
+.menu-toggle { display: none; }
+
 .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
 .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; transition: var(--transition-smooth); }
 .nav-links a:hover { color: var(--text-main); }
-.btn-nav { border: 1px solid var(--border-light); padding: 0.6rem 1.2rem; border-radius: 8px; color: var(--text-main) !important; background: var(--bg-card); transition: var(--transition-smooth); }
+.btn-nav { border: 1px solid var(--border-light); padding: 0.6rem 1.2rem; border-radius: 8px; color: var(--text-main) !important; background: var(--bg-card); transition: var(--transition-smooth); font-weight: 700 !important; }
 .btn-nav:hover { border-color: var(--accent); background: var(--accent-glow); box-shadow: 0 0 15px var(--accent-glow); }
+
+/* --- BARRE PROMOTIONNELLE --- */
+.promo-banner {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    z-index: 998;
+    background-color: #4ADE80;
+    color: #0a0a0a;
+    text-align: center;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.2);
+
+    /* Flexbox pour un alignement parfait */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permet au bouton de passer à la ligne sur les très petits écrans */
+    gap: 10px 20px;
+}
+
+.promo-banner a {
+    color: #0a0a0a;
+    text-decoration: underline;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+.promo-banner a:hover {
+    opacity: 0.6;
+}
 
 /* --- HERO SECTION --- */
 .hero-premium {
     min-height: 100vh; display: flex; align-items: center;
-    position: relative; padding-top: 90px; overflow: hidden;
+    position: relative; padding-top: 130px; /* Ajusté pour laisser la place à la navbar ET la promo banner */
+    overflow: hidden;
 }
 
 /* Texture Grille */
@@ -219,6 +257,17 @@ textarea { height: 140px; resize: vertical; }
     .container { padding: 0 5vw; width: 100%; overflow: hidden; }
 
     .navbar { height: 75px; }
+
+    /* --- CORRECTION ICI POUR LA PROMO BANNER SUR MOBILE --- */
+    .promo-banner {
+        top: 75px; /* S'aligne parfaitement sous la navbar réduite */
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
+
+    /* Et on décale un peu le hero pour pas qu'il soit mangé */
+    .hero-premium { padding-top: 120px; text-align: center; }
+
     .menu-toggle { display: flex; z-index: 1001; background: transparent; border: none; flex-direction: column; gap: 6px; cursor: pointer; }
     .bar { width: 28px; height: 2px; background: var(--text-main); transition: var(--transition-smooth); border-radius: 2px; }
 
@@ -233,7 +282,6 @@ textarea { height: 140px; resize: vertical; }
     .subtitle { font-size: 1.05rem; margin-bottom: 2rem; }
     .section-header h2 { font-size: 2rem; margin-bottom: 2.5rem; }
 
-    .hero-premium { padding-top: 100px; text-align: center; }
     .hero-btns { flex-direction: column; align-items: stretch; gap: 1rem; width: 100%; }
     .btn-main { width: 100%; display: block; }
 
