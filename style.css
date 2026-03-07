@@ -214,31 +214,14 @@ body {
   font-size: 1rem;
   border: none;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transform: translate3d(0, 0, 0);
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease,
-  background 0.35s ease;
-}
-
-.btn-main::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top left, #ffffff, transparent 55%);
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  mix-blend-mode: screen;
-}
-
-.btn-main:hover::before {
-  opacity: 0.8;
+  outline: none !important;
+  transition: all 0.3s ease;
 }
 
 .btn-main:hover {
-  box-shadow: 0 20px 45px var(--accent-glow);
+  box-shadow: 0 15px 35px var(--accent-glow);
+  transform: translateY(-3px);
 }
-
 /* ------------------------------------------------
    HERO HOME
 -------------------------------------------------*/
