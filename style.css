@@ -239,15 +239,6 @@ body {
   box-shadow: 0 20px 45px var(--accent-glow);
 }
 
-.magnetic {
-  position: relative;
-  display: inline-flex;
-}
-
-.magnetic [data-magnetic] {
-  will-change: transform;
-}
-
 /* ------------------------------------------------
    HERO HOME
 -------------------------------------------------*/
