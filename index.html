@@ -350,7 +350,7 @@
           </div>
           <span class="portfolio-tag">SaaS · Dashboard métier</span>
           <div class="portfolio-title-wrapper">
-            <h3>Plateforme de réservation GKMOTION</h3>
+            <h3>GKMOTION · Plateforme de réservation</h3>
             <span class="portfolio-arrow">↗</span>
           </div>
           <p class="text-secondary" style="margin-top: 8px;">
@@ -364,7 +364,7 @@
           </div>
           <span class="portfolio-tag">Site Vitrine & SEO</span>
           <div class="portfolio-title-wrapper">
-            <h3>MyPhone · Réparation & services</h3>
+            <h3>MYPHONE · Réparation & services</h3>
             <span class="portfolio-arrow">↗</span>
           </div>
           <p class="text-secondary" style="margin-top: 8px;">Conception d'une plateforme sur-mesure optimisée pour la conversion, propulsant la visibilité locale et l'image de marque de l'enseigne.</p>
@@ -397,7 +397,7 @@
         <div style="display: flex; align-items: center; gap: 15px;">
           <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-surface); border: 2px solid var(--border-light);"></div>
           <div>
-            <div style="font-weight: 700;">MyPhone</div>
+            <div style="font-weight: 700;">MYPHONE</div>
             <div class="text-secondary" style="font-size: 0.85rem;">Commerce & Services locaux</div>
           </div>
         </div>
@@ -528,19 +528,6 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // 3. Boutons Magnétiques
-    const magneticBtns = document.querySelectorAll('.btn-main');
-    magneticBtns.forEach(btn => {
-      btn.addEventListener('mousemove', (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = (e.clientX - rect.left) - rect.width / 2;
-        const y = (e.clientY - rect.top) - rect.height / 2;
-        btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-      });
-      btn.addEventListener('mouseleave', () => {
-        btn.style.transform = `translate(0px, 0px)`;
-      });
-    });
   });
 </script>
 

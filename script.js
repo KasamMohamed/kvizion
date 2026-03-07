@@ -56,29 +56,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
   }
 
-
-  // ---------------------------------------------
-  // 3. Boutons magnétiques (data-magnetic)
-  // ---------------------------------------------
-  const magneticButtons = document.querySelectorAll('[data-magnetic]');
-
-  magneticButtons.forEach((btn) => {
-    const strength = parseFloat(btn.getAttribute('data-magnetic')) || 0.3;
-
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const relX = e.clientX - rect.left - rect.width / 2;
-      const relY = e.clientY - rect.top - rect.height / 2;
-
-      const moveX = (relX / rect.width) * strength * 30;
-      const moveY = (relY / rect.height) * strength * 30;
-
-      btn.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
-    });
-
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = 'translate3d(0, 0, 0)';
-    });
-  });
-
 });
