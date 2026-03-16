@@ -67,9 +67,12 @@
 </nav>
 
 <main>
-  <section id="accueil" class="hero">
+  <section id="accueil" class="hero" style="position: relative; overflow: hidden;">
     <div class="hero-bg-glow"></div>
-    <div class="container hero-content">
+
+    <canvas id="hero-3d-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.7;"></canvas>
+
+    <div class="container hero-content" style="position: relative; z-index: 10;">
       <div class="reveal">
         <div class="rating-badge">
           <span class="stars">★★★★★</span>
@@ -357,7 +360,7 @@
           </p>
         </a>
 
-        <a href="#" class="portfolio-card reveal delay-1">
+        <a href="https://myphone39.fr" class="portfolio-card reveal delay-1">
           <div class="portfolio-img-wrapper">
             <img src="assets/projet-myphone-2.webp" alt="Site Vitrine" class="portfolio-img" loading="lazy">
           </div>
@@ -423,6 +426,7 @@
     </div>
   </section>
 </main>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -481,6 +485,9 @@
   </div>
 </footer>
 
+<!-- OPTI 1: Ajout de 'defer' pour ne pas bloquer le premier affichage de la page -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     // 1. Menu Flottant (Toggle Mobile)
@@ -525,6 +532,84 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+    // 3. ANIMATION 3D K-VIZION (Three.js) - VAGUE DIGITALE
+    const canvas = document.getElementById('hero-3d-canvas');
+    if (canvas && typeof THREE !== 'undefined') {
+
+      const scene = new THREE.Scene();
+
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      // On place la caméra plus bas pour regarder la vague
+      camera.position.z = 4;
+      camera.position.y = 1;
+      camera.position.x = 2; // Toujours décalé sur la droite
+
+      const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+      // OPTI 2: Limite la résolution maximale (pixel ratio) à 2x pour soulager le GPU des mobiles récents
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+      // Géométrie : Un plan divisé en nombreux segments (40x20)
+      const geometry = new THREE.PlaneGeometry(20, 10, 40, 20);
+
+      const material = new THREE.MeshBasicMaterial({
+        color: 0x4ADE80, // Vert K-VIZION
+        wireframe: true,
+        transparent: true,
+        opacity: 0.12 // Très subtil
+      });
+
+      const plane = new THREE.Mesh(geometry, material);
+
+      // On couche le plan pour qu'il soit comme un sol
+      plane.rotation.x = -Math.PI / 2.5;
+      plane.position.y = -1.5;
+      scene.add(plane);
+
+      const vertices = plane.geometry.attributes.position.array;
+
+      // OPTI 3: Détecter si le canvas est visible pour stopper l'animation quand l'utilisateur scrolle vers le bas
+      let isCanvasVisible = true;
+      const heroSection = document.getElementById('accueil');
+      if (heroSection) {
+        const visibilityObserver = new IntersectionObserver((entries) => {
+          isCanvasVisible = entries[0].isIntersecting;
+        }, { threshold: 0 }); // threshold 0 = dès que ça sort de l'écran
+        visibilityObserver.observe(heroSection);
+      }
+
+      // --- ANIMATION DE LA VAGUE ---
+      const animate = () => {
+        requestAnimationFrame(animate);
+
+        // OPTI 3 (suite): On court-circuite la fonction si on ne voit pas l'accueil. Zéro calcul inutile.
+        if (!isCanvasVisible) return;
+
+        const time = Date.now() * 0.001;
+
+        // On fait onduler les sommets (vertices) du plan
+        for (let i = 0; i < vertices.length; i += 3) {
+          const x = vertices[i];
+          const y = vertices[i + 1];
+          // Modification de l'axe Z (qui devient la hauteur grâce à la rotation)
+          // L'équation mathématique crée les vagues
+          vertices[i + 2] = Math.sin(x * 0.5 + time) * Math.cos(y * 0.5 + time) * 0.6;
+        }
+
+        // Dire à Three.js que la géométrie a changé pour qu'il recalcule la forme
+        plane.geometry.attributes.position.needsUpdate = true;
+
+        renderer.render(scene, camera);
+      };
+
+      animate();
+
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    }
   });
 </script>
 
